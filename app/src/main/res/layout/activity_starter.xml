@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorAccent"
+    tools:context="com.example.ayaali.fastfoodfp.activity.StarterActivity">
+
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:srcCompat="@drawable/cover"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="0dp"
+        />
+
+</android.support.constraint.ConstraintLayout>
