@@ -125,7 +125,7 @@ public class RecipeFragment extends Fragment {
 
         super.onViewCreated(view, savedInstanceState);
         if(savedInstanceState!=null) {
-            flag = (int) savedInstanceState.getSerializable("flag");
+
             dataSet = (List<Recipe>) savedInstanceState.getSerializable("dataset");
         }
         // handel swipe refresh listener
