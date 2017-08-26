@@ -29,6 +29,8 @@ import com.example.ayaali.fastfoodfp.models.Recipe;
 import com.example.ayaali.fastfoodfp.parser.RecipeParser;
 import com.example.ayaali.fastfoodfp.store.ContentProvider;
 import com.example.ayaali.fastfoodfp.store.RecipeTable;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import org.xml.sax.Parser;
 
@@ -51,13 +53,14 @@ public class RecipeFragment extends Fragment {
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
     }
-
+    @BindView(R.id.adView)
+    AdView mAdView;
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
     @BindView(R.id.swipeRefresh)
     SwipeRefreshLayout mSwipeRefreshLayout;
     public static final String ARG_ITEM_ID = "item_id";
-    private Menu menu;
+    Menu menu;
     protected RecipeAdapter recipeAdapter;
     protected RecyclerView.LayoutManager mLayoutManager;
     protected List<Recipe> dataSet;
@@ -94,7 +97,8 @@ public class RecipeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.activity_recipe_list, container, false);
         ButterKnife.bind(this, view);
-
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         mRecyclerView.setHasFixedSize(true);
         recipeAdapter = new RecipeAdapter(getActivity(),dataSet);
         mRecyclerView.setAdapter(recipeAdapter);
@@ -254,11 +258,11 @@ public class RecipeFragment extends Fragment {
         // movieDB=new DBHandler(getContext());
         ContentProvider m=new ContentProvider(getContext());
         clearDataSet();
-        dataSet.addAll(0,getAllRecipes(ContentProvider.CONTENT_URI));
+        dataSet.addAll(0,getAllRecipes());
 
         recipeAdapter.notifyDataSetChanged();
     }
-    private List<Recipe> getAllRecipes(Uri uri)
+    private List<Recipe> getAllRecipes()
     {
         String[] projection={RecipeTable.KEY_Name,
                 RecipeTable.KEY_Cover,
@@ -289,6 +293,7 @@ public class RecipeFragment extends Fragment {
 // Adding contact to list
                 movieList.add(mRecipe);
             } while (cursor.moveToNext());
+            cursor.close();
         }
 // return contact list
         return movieList;

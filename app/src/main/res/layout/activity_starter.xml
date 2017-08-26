@@ -16,6 +16,6 @@
         app:srcCompat="@drawable/cover"
         android:layout_marginTop="150dp"
         android:layout_marginBottom="0dp"
-        />
+        android:contentDescription="@string/description" />
 
 </android.support.constraint.ConstraintLayout>

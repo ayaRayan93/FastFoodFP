@@ -36,7 +36,7 @@ import static android.support.v7.recyclerview.R.styleable.RecyclerView;
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder> {
 
     private List<Recipe> DataSet;
-    private static Context context;
+    private  Context context;
 
     public RecipeAdapter(Context cont,List<Recipe> dataSet)
     {

@@ -6,7 +6,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#bbDEDFDE"
+
         android:orientation="vertical">
         <LinearLayout
             android:id="@+id/widget_layout_main"
@@ -20,13 +20,14 @@
                 android:id="@+id/widget_img_launcher"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
+                android:contentDescription="@string/description"
                 android:layout_gravity="center_vertical"
                 android:src="@mipmap/ic_launcher"/>
             <TextView
                 android:id="@+id/appwidget_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Widget Header"
+                android:text="@string/WidgetHeader"
                 android:layout_gravity="center_vertical"
                 android:textColor="@android:color/black"
                 android:textAppearance="?android:attr/textAppearanceMedium"

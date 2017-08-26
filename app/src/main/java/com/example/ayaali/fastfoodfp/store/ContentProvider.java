@@ -85,11 +85,11 @@ public class ContentProvider extends android.content.ContentProvider
         SQLiteDatabase db = database.getWritableDatabase();
         // Cursor cursor = queryBuilder.query(db, projection, selection,
         //       selectionArgs, null, null, sortOrder);
-        Cursor cursor = db.rawQuery(selection, null);
+        return  db.rawQuery(selection, null);
         // make sure that potential listeners are getting notified
 //        cursor.setNotificationUri(getContext().getContentResolver(), uri);
 
-        return cursor;
+
     }
 
     @Nullable

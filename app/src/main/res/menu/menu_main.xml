@@ -6,14 +6,14 @@
         android:icon="@drawable/dots_vertical"
         android:orderInCategory="101"
         android:title=""
-        app:showAsAction="always">
+        app:showAsAction="ifRoom">
         <menu>
 
 
             <item
                 android:id="@+id/favorite"
-                android:title="Favorite"
-                app:showAsAction="always|withText" />
+                android:title="@string/Favorite"
+                app:showAsAction="ifRoom|withText" />
 
         </menu>
     </item>

@@ -16,7 +16,7 @@ public class RecipeTable {
     public static final String KEY_Cover="coverImage" ;
     public static final String KEY_INGREDIENTS="ingredients" ;
     public static final String KEY_DETAILIMAGE="detailImage" ;
-    public static String CREATE_Database_TABLE = "CREATE TABLE " + TABLE_RECIPE + "("
+    private static String CREATE_Database_TABLE = "CREATE TABLE " + TABLE_RECIPE + "("
 
             +KEY_Name+" TEXT PRIMARY KEY,"
             +KEY_Cover+" TEXT,"

@@ -15,9 +15,9 @@ import com.android.volley.toolbox.ImageLoader;
             ImageLoader.ImageCache {
         public static int getDefaultLruCacheSize() {
             final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
-            final int cacheSize = maxMemory / 8;
+            return maxMemory / 8;
 
-            return cacheSize;
+
         }
 
         public LruBitmapCache() {

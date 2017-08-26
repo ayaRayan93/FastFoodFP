@@ -79,12 +79,12 @@ public class WidgetDataProvider implements RemoteViewsService.RemoteViewsFactory
 
     private void initData() {
         mCollection.clear();
-        List<Recipe> mRwcipes= getAllRecipes(ContentProvider.CONTENT_URI);
+        List<Recipe> mRwcipes= getAllRecipes();
         for (int i = 0; i < mRwcipes.size(); i++) {
             mCollection.add(mRwcipes.get(i).getNameRecipe());
         }
     }
-    private List<Recipe> getAllRecipes(Uri uri)
+    private List<Recipe> getAllRecipes()
     {
         String[] projection={RecipeTable.KEY_Name,
                 RecipeTable.KEY_Cover,
@@ -115,6 +115,7 @@ public class WidgetDataProvider implements RemoteViewsService.RemoteViewsFactory
 // Adding contact to list
                 movieList.add(mRecipe);
             } while (cursor.moveToNext());
+            cursor.close();
         }
 // return contact list
         return movieList;

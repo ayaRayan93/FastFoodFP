@@ -16,17 +16,14 @@ import com.example.ayaali.fastfoodfp.R;
  */
 public class CollectionWidget extends AppWidgetProvider {
 
-    static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
+   private static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.collection_widget);
        views.setTextViewText(R.id.appwidget_text, "Favorite Recipes");
 
         // Set up the collection
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-            setRemoteAdapter(context, views);
-        } else {
-            setRemoteAdapterV11(context, views);
-        }
+         setRemoteAdapter(context, views);
+
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
