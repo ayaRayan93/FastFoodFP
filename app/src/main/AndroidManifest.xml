@@ -3,6 +3,8 @@
     package="com.example.ayaali.fastfoodfp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application
         android:name=".app.AppController"
@@ -29,6 +31,24 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="LISTITEM" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".analytic.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="analysis" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".curser.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="loader" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

@@ -19,7 +19,7 @@ public class CollectionWidget extends AppWidgetProvider {
    private static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.collection_widget);
-       views.setTextViewText(R.id.appwidget_text, "Favorite Recipes");
+       views.setTextViewText(R.id.appwidget_text, context.getString(R.string.FR));
 
         // Set up the collection
          setRemoteAdapter(context, views);

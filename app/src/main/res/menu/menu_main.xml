@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/empty"
+        android:id="@+id/main"
         android:icon="@drawable/dots_vertical"
         android:orderInCategory="101"
         android:title=""
@@ -15,6 +15,10 @@
                 android:title="@string/Favorite"
                 app:showAsAction="ifRoom|withText" />
 
+            <item
+                android:id="@+id/analytic"
+                android:title="@string/analysis"
+                app:showAsAction="ifRoom|withText" />
         </menu>
     </item>
 

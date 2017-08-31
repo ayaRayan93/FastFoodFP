@@ -10,6 +10,7 @@ public class RecipesListActivity extends AppCompatActivity {
 
     public static boolean mTwoPane;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +22,12 @@ public class RecipesListActivity extends AppCompatActivity {
 
         }
 
+// Obtain the shared Tracker instance.
+
+
 
         RecipeFragment listitemsfragment=new RecipeFragment();
+
         getSupportFragmentManager().beginTransaction().add(R.id.item_container, listitemsfragment).commit();
     }
 }

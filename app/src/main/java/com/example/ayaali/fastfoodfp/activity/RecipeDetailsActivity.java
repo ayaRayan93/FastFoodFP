@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import com.example.ayaali.fastfoodfp.R;
 import com.example.ayaali.fastfoodfp.fragment.DetailsFragment;
-import com.example.ayaali.fastfoodfp.fragment.RecipeFragment;
 
 public class RecipeDetailsActivity extends AppCompatActivity {
 
@@ -13,6 +12,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_details);
+
         if (savedInstanceState == null)
         {
             // Create the detail fragment and add it to the activity

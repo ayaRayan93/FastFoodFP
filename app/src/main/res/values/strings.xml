@@ -8,4 +8,14 @@
     <string name="Ingredients">Ingredients</string>
     <string name="Favorite">Favorite</string>
     <string name="NameofRecipe">Name of Recipe</string>
+    <string name="FR">Favorite Recipes</string>
+    <string name="pattern1_title">A</string>
+    <string name="pattern2_title">B</string>
+    <string name="pattern3_title">C</string>
+    <string name="pattern4_title">D</string>
+    <string name="menu_share">Share</string>
+
+    <string name="bad_config">Please configure global_tracker.xml, see README.</string>
+    <string name="analysis">Analysis</string>
+    <string name="share">share</string>
 </resources>

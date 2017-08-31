@@ -1,11 +1,14 @@
 package com.example.ayaali.fastfoodfp.fragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
-import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -32,8 +35,6 @@ import com.example.ayaali.fastfoodfp.store.RecipeTable;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-import org.xml.sax.Parser;
-
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -42,6 +43,8 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static android.R.attr.fragment;
 
 /**
  * Created by AyaAli on 19/08/2017.
@@ -65,6 +68,7 @@ public class RecipeFragment extends Fragment {
     protected RecyclerView.LayoutManager mLayoutManager;
     protected List<Recipe> dataSet;
     private int flag;
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -97,8 +101,11 @@ public class RecipeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.activity_recipe_list, container, false);
         ButterKnife.bind(this, view);
+
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+
         mRecyclerView.setHasFixedSize(true);
         recipeAdapter = new RecipeAdapter(getActivity(),dataSet);
         mRecyclerView.setAdapter(recipeAdapter);
@@ -156,7 +163,7 @@ public class RecipeFragment extends Fragment {
          * Execute the background task, which uses {@link AsyncTask} to load the data.
          */
         // We first check for cached request
-       Cache cache = AppController.getInstance().getRequestQueue().getCache();
+      Cache cache = AppController.getInstance().getRequestQueue().getCache();
         Cache.Entry entry = cache.get(Url);
         if (entry != null) {
             // fetch the data from cache
@@ -243,7 +250,10 @@ public class RecipeFragment extends Fragment {
 
                 showFavorite();
                 return true;
-
+            case R.id.analytic:
+                Intent questions=new Intent("analysis");
+                startActivity(questions);
+                return true;
             default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
@@ -261,6 +271,8 @@ public class RecipeFragment extends Fragment {
         dataSet.addAll(0,getAllRecipes());
 
         recipeAdapter.notifyDataSetChanged();
+
+
     }
     private List<Recipe> getAllRecipes()
     {

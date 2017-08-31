@@ -1,6 +1,10 @@
 package com.example.ayaali.fastfoodfp.store;
 
+import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.example.ayaali.fastfoodfp.curser.MainActivity;
 
 /**
  * Created by AyaAli on 22/08/2017.
@@ -23,6 +27,10 @@ public class RecipeTable {
             +KEY_INGREDIENTS+" TEXT,"
             + KEY_DETAILIMAGE + " TEXT"+ ")";
 
+    public RecipeTable(MainActivity mainActivity, Runnable callback) {
+        callback.run();
+    }
+
     public static void onCreate(SQLiteDatabase database) {
         database.execSQL(CREATE_Database_TABLE);
     }
@@ -32,5 +40,19 @@ public class RecipeTable {
 
         database.execSQL("DROP TABLE IF EXISTS " + TABLE_RECIPE);
         onCreate(database);
+    }
+
+    public static Cursor getItems(Context context) {
+        String[] projection={RecipeTable.KEY_Name,
+                RecipeTable.KEY_Cover,
+                RecipeTable.KEY_INGREDIENTS,
+                RecipeTable.KEY_DETAILIMAGE
+        };
+
+// Select All Query
+        String selectQuery = "SELECT * FROM " + RecipeTable.TABLE_RECIPE;
+        ContentProvider movieContentProvider=new ContentProvider(context);
+        //SQLiteDatabase db = this.getWritableDatabase();
+        return movieContentProvider.query(ContentProvider.CONTENT_URI,projection,selectQuery,null,null);
     }
 }

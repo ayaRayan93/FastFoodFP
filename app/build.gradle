@@ -6,7 +6,7 @@ android {
         config {
             keyAlias 'mAndroidKey'
             keyPassword 'mKeyPassword'
-            storeFile file('I:/android/android.jks')
+            storeFile file("release.keystore")
             storePassword '123456'
         }
     }
@@ -45,5 +45,7 @@ dependencies {
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
     //////picasso////
     compile 'com.squareup.picasso:picasso:2.4.0'
-    compile 'com.google.android.gms:play-services-ads:10.2.1'
+    compile 'com.google.android.gms:play-services-analytics:11.0.1'
+    compile 'com.google.android.gms:play-services-ads:11.0.1'
+
 }
