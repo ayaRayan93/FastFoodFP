@@ -16,7 +16,7 @@ public class RecipeTable {
     // recipe Table Columns names
 
     public static final String KEY_ID ="ID" ;
-    public static final String KEY_Name ="nameRecipe" ;
+    public static final String KEY_Name ="_id" ;//nameRecipe
     public static final String KEY_Cover="coverImage" ;
     public static final String KEY_INGREDIENTS="ingredients" ;
     public static final String KEY_DETAILIMAGE="detailImage" ;

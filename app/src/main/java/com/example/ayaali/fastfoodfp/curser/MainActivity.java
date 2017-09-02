@@ -46,7 +46,7 @@ public class MainActivity extends FragmentActivity implements LoaderManager.Load
 
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
-      //  la.swapCursor(cursor);
+        la.swapCursor(cursor);
     }
 
     @Override
