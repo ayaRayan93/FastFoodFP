@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.support.v4.content.CursorLoader;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.ayaali.fastfoodfp.store.RecipeTable;
 
@@ -20,8 +21,8 @@ public class DumbLoader extends CursorLoader {
     @Override
     public Cursor loadInBackground() {
         Cursor c = RecipeTable.getItems(getContext());
-        //while (c.moveToNext())
-          // Log.d(TAG, "item: " + c.getInt(0) + " - " + c.getString(1));
+       // while (c.moveToNext())
+           // Toast.makeText(getContext(), "item: " + c.getInt(0) + " - " + c.getString(1),Toast.LENGTH_SHORT).show();
         return c;
     }
 }
