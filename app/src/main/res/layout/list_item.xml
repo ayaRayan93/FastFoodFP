@@ -11,10 +11,5 @@
         android:id="@+id/tv1"
         android:layout_gravity="center" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/tv2"
-        android:layout_gravity="center" />
+
 </LinearLayout>

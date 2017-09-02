@@ -26,14 +26,7 @@ public class MainActivity extends FragmentActivity implements LoaderManager.Load
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         lv = (ListView) findViewById(R.id.list);
-        Runnable callback = new Runnable() {
-            @Override
-            public void run() {
-                getSupportLoaderManager().getLoader(LOADER_ID).forceLoad();
-            }
-        };
 
-        dd = new RecipeTable(this, callback);
         la = new DummyAdapter(this, null);
         getSupportLoaderManager().initLoader(LOADER_ID, null, this);
         lv.setAdapter(la);
@@ -53,7 +46,7 @@ public class MainActivity extends FragmentActivity implements LoaderManager.Load
 
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
-        //la.swapCursor(cursor);
+      //  la.swapCursor(cursor);
     }
 
     @Override

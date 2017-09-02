@@ -1,7 +1,9 @@
 package com.example.ayaali.fastfoodfp.fragment;
 
+import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.Loader;
 import android.database.Cursor;
 import android.support.v4.app.Fragment;
 import android.os.AsyncTask;
@@ -50,7 +52,7 @@ import static android.R.attr.fragment;
  * Created by AyaAli on 19/08/2017.
  */
 
-public class RecipeFragment extends Fragment {
+public class RecipeFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>{
 
     @Override
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
@@ -266,11 +268,13 @@ public class RecipeFragment extends Fragment {
     {
 
         // movieDB=new DBHandler(getContext());
-        ContentProvider m=new ContentProvider(getContext());
+        /*ContentProvider m=new ContentProvider(getContext());
         clearDataSet();
         dataSet.addAll(0,getAllRecipes());
 
-        recipeAdapter.notifyDataSetChanged();
+        recipeAdapter.notifyDataSetChanged();*/
+        Intent questions=new Intent("loader");
+        startActivity(questions);
 
 
     }
@@ -309,6 +313,21 @@ public class RecipeFragment extends Fragment {
         }
 // return contact list
         return movieList;
+
+    }
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        return null;
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {
 
     }
 }
